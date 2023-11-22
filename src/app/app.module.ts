@@ -5,6 +5,7 @@ import { UsuarioComponent } from './usuario.component';
 import { FormsModule } from '@angular/forms';
 import { LibrosComponent } from './libros/libros.component';
 import { LibroComponent } from './libro/libro.component';
+import { LibrosService } from './services/libros.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,9 @@ import { LibroComponent } from './libro/libro.component';
     BrowserModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [
+    LibrosService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
