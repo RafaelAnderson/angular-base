@@ -8,6 +8,10 @@ import { LibroComponent } from './libro/libro.component';
 import { LibrosService } from './services/libros.service';
 import { InicioComponent } from './inicio.component';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
+import { RegistrarComponent } from './seguridad/registrar/registrar.component';
+import { LoginComponent } from './seguridad/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,11 +19,15 @@ import { AppRoutingModule } from './app-routing.module';
     LibrosComponent,
     LibroComponent,
     InicioComponent,
+    RegistrarComponent,
+    LoginComponent,
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
   ],
   providers: [
     LibrosService

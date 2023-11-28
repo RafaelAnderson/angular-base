@@ -1,0 +1,91 @@
+<section>
+  <form id="contenedor1" (ngSubmit)="registrarUsuario(f)" #f="ngForm">
+    <mat-form-field>
+      <mat-label>Ingrese nombre</mat-label>
+      <input
+        type="text"
+        ngModel
+        name="nombre"
+        required
+        placeholder="Ingrese nombre"
+        matInput
+      />
+      <mat-error>Debe ingresar un nombre</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Ingrese apellidos</mat-label>
+      <input
+        type="text"
+        ngModel
+        name="apellidos"
+        required
+        placeholder="Ingrese apellidos"
+        matInput
+      />
+      <mat-error>Debe ingresar los apellidos</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Ingrese username</mat-label>
+      <input
+        type="text"
+        ngModel
+        name="username"
+        required
+        placeholder="rafael"
+        matInput
+      />
+      <mat-error>Debe ingresar un username</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Ingrese E-mail</mat-label>
+      <input
+        #emailInput="ngModel"
+        type="email"
+        matInput
+        placeholder="rafael@gmail.com"
+        ngModel
+        name="email"
+        email
+        required
+      />
+      <mat-error *ngIf="emailInput.hasError('required')"
+        >El email no puede estar en blanco</mat-error
+      >
+      <mat-error *ngIf="emailInput.hasError('email')"
+        >El email es inválido</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field hintLabel="El password debe tener 7 caracteres">
+      <mat-label>Ingrese Password</mat-label>
+      <input
+        type="password"
+        matInput
+        placeholder="Ingresa Password"
+        ngModel
+        name="password"
+        required
+        minlength="7"
+      />
+      <mat-error>El password debe tener más de 7 caracteres</mat-error>
+    </mat-form-field>
+
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      [disabled]="f.invalid"
+    >
+      Guardar
+    </button>
+  </form>
+</section>
+
+<!-- <section id="contenedor2">
+  <div id="elemento1" class="elemento"></div>
+  <div id="elemento2" class="elemento"></div>
+  <div id="elemento3" class="elemento"></div>
+</section> -->
